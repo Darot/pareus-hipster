@@ -1,0 +1,38 @@
+
+<div *ngIf="address">
+    <h2><span jhiTranslate="pareusApp.address.detail.title">Address</span> {{address.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="pareusApp.address.street">Street</span></dt>
+        <dd>
+            <span>{{address.street}}</span>
+        </dd>
+        <dt><span jhiTranslate="pareusApp.address.houseNumber">House Number</span></dt>
+        <dd>
+            <span>{{address.houseNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="pareusApp.address.zipCode">Zip Code</span></dt>
+        <dd>
+            <span>{{address.zipCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="pareusApp.address.city">City</span></dt>
+        <dd>
+            <span>{{address.city}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'address/'+ address.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

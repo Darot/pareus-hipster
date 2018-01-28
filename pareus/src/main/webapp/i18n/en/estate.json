@@ -1,0 +1,27 @@
+{
+    "pareusApp": {
+        "estate" : {
+            "home": {
+                "title": "Estates",
+                "createLabel": "Create a new Estate",
+                "createOrEditLabel": "Create or edit a Estate",
+                "search": "Search for Estate"
+            },
+            "created": "A new Estate is created with identifier {{ param }}",
+            "updated": "A Estate is updated with identifier {{ param }}",
+            "deleted": "A Estate is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Estate {{ id }}?"
+            },
+            "detail": {
+                "title": "Estate"
+            },
+            "description": "Description",
+            "price": "Price",
+            "address": "Address",
+            "image": "Image",
+            "claimedBy": "Claimed By",
+            "watchlist": "Watchlist"
+        }
+    }
+}

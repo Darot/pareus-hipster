@@ -1,0 +1,23 @@
+{
+    "pareusApp": {
+        "estateAgency" : {
+            "home": {
+                "title": "Estate Agencies",
+                "createLabel": "Create a new Estate Agency",
+                "createOrEditLabel": "Create or edit a Estate Agency",
+                "search": "Search for Estate Agency"
+            },
+            "created": "A new Estate Agency is created with identifier {{ param }}",
+            "updated": "A Estate Agency is updated with identifier {{ param }}",
+            "deleted": "A Estate Agency is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Estate Agency {{ id }}?"
+            },
+            "detail": {
+                "title": "Estate Agency"
+            },
+            "name": "Name",
+            "address": "Address"
+        }
+    }
+}

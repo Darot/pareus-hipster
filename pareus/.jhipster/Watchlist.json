@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "estate",
+            "otherEntityName": "estate",
+            "otherEntityRelationshipName": "watchlist"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "customer",
+            "otherEntityName": "customer",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "watchlist"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20180128091351",
+    "entityTableName": "watchlist",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

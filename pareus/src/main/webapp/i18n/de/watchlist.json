@@ -1,0 +1,23 @@
+{
+    "pareusApp": {
+        "watchlist" : {
+            "home": {
+                "title": "Watchlists",
+                "createLabel": "Watchlist erstellen",
+                "createOrEditLabel": "Watchlist erstellen oder bearbeiten",
+                "search": "Suche nach Watchlist"
+            },
+            "created": "Watchlist erstellt mit ID {{ param }}",
+            "updated": "Watchlist aktualisiert mit ID {{ param }}",
+            "deleted": "Watchlist gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Watchlist {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Watchlist"
+            },
+            "estate": "Estate",
+            "customer": "Customer"
+        }
+    }
+}

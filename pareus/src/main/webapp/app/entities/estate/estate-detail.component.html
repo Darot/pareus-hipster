@@ -1,0 +1,48 @@
+
+<div *ngIf="estate">
+    <h2><span jhiTranslate="pareusApp.estate.detail.title">Estate</span> {{estate.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="pareusApp.estate.description">Description</span></dt>
+        <dd>
+            <span>{{estate.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="pareusApp.estate.price">Price</span></dt>
+        <dd>
+            <span>{{estate.price}}</span>
+        </dd>
+        <dt><span jhiTranslate="pareusApp.estate.address">Address</span></dt>
+        <dd>
+            <div *ngIf="estate.addressId">
+                <a [routerLink]="['/address', estate.addressId]">{{estate.addressId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="pareusApp.estate.claimedBy">Claimed By</span></dt>
+        <dd>
+            <div *ngIf="estate.claimedById">
+                <a [routerLink]="['/estate-agency', estate.claimedById]">{{estate.claimedById}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="pareusApp.estate.watchlist">Watchlist</span></dt>
+        <dd>
+            <div *ngIf="estate.watchlistId">
+                <a [routerLink]="['/watchlist', estate.watchlistId]">{{estate.watchlistId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'estate/'+ estate.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

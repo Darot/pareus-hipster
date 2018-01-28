@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Estate.
+    -->
+    <changeSet id="20180128091349-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="address_id"
+                                 baseTableName="estate"
+                                 constraintName="fk_estate_address_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="address"/>
+
+        <addForeignKeyConstraint baseColumnNames="claimed_by_id"
+                                 baseTableName="estate"
+                                 constraintName="fk_estate_claimed_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="estate_agency"/>
+
+        <addForeignKeyConstraint baseColumnNames="watchlist_id"
+                                 baseTableName="estate"
+                                 constraintName="fk_estate_watchlist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="watchlist"/>
+
+    </changeSet>
+</databaseChangeLog>

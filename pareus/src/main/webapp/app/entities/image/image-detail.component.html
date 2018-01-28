@@ -1,0 +1,36 @@
+
+<div *ngIf="image">
+    <h2><span jhiTranslate="pareusApp.image.detail.title">Image</span> {{image.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="pareusApp.image.path">Path</span></dt>
+        <dd>
+            <span>{{image.path}}</span>
+        </dd>
+        <dt><span jhiTranslate="pareusApp.image.description">Description</span></dt>
+        <dd>
+            <span>{{image.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="pareusApp.image.estate">Estate</span></dt>
+        <dd>
+            <div *ngIf="image.estateId">
+                <a [routerLink]="['/estate', image.estateId]">{{image.estateId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'image/'+ image.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
