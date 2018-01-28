@@ -1,0 +1,51 @@
+entity Estate {
+	description String
+    price BigDecimal
+}
+
+entity Image {
+	path String // I would expect a S3 Standard like path
+	description String
+}
+
+entity Watchlist {
+}
+
+entity Customer {
+	
+}
+
+entity EstateAgency {
+	name String
+}
+
+entity Address {
+	street String
+    houseNumber String
+    zipCode String
+    city String
+}
+
+relationship OneToOne {
+	Customer{watchlist} to Watchlist{customer}
+    Customer{address} to Address
+    Estate{address} to Address
+    EstateAgency{address} to Address
+}
+
+relationship OneToMany {
+	Estate{image} to Image
+    Watchlist{estate} to Estate
+}
+
+relationship ManyToOne {
+	Estate{claimedBy} to EstateAgency
+}
+
+// Set pagination options
+paginate * with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
